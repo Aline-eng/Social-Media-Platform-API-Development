@@ -1,4 +1,14 @@
 package com.example.SocailMedia.repository;
 
-public interface PostRepository extends org.springframework.data.jpa.repository.JpaRepository<com.example.SocailMedia.model.Post, java.lang.Long> {
+import com.example.SocailMedia.model.Post;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.time.LocalDateTime;
+import java.util.List;
+
+public interface PostRepository extends JpaRepository<Post, Long> {
+    List<Post> findByCreatedById(Long authorId);
+    void deleteByCreatedAtBetween(
+            LocalDateTime start, LocalDateTime end
+    );
 }
