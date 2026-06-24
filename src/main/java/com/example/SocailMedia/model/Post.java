@@ -21,8 +21,6 @@ public class Post {
     @Column(length = 3000)
     private String content;
     private String visibility = "PUBLIC";
-    @ManyToOne
-    @JoinColumn(name = "author_id")
     private Author createdBy;
     private LocalDateTime createdAt;
 }

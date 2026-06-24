@@ -3,6 +3,7 @@ package com.example.SocailMedia.controller;
 import com.example.SocailMedia.dto.AuthorResponse;
 import com.example.SocailMedia.dto.CreateAuthorRequest;
 import com.example.SocailMedia.dto.UpdateAuthorRequest;
+import com.example.SocailMedia.model.Author;
 import com.example.SocailMedia.service.AuthorService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -25,7 +26,7 @@ public class AuthorController {
     }
 
     @GetMapping
-    public List<AuthorResponse> getAllAuthors() {
+    public List<Author> getAllAuthors() {
         return authorService.getAllAuthors();
     }
 

@@ -41,11 +41,8 @@ public class AuthorService {
     }
 
  
-    public List<AuthorResponse> getAllAuthors() {
-        return authorRepository.findAll()
-                .stream()
-                .map(a -> toResponse("", a))
-                .toList();
+    public List<Author> getAllAuthors() {
+        return authorRepository.findAll();
     }
 
     public AuthorResponse getAuthorById(Long id) {
